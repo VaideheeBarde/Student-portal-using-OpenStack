@@ -5,7 +5,9 @@ In this project, containers are subjects and files that are uploaded/downloaded/
 A diagram of how everything works.
 
 ![OpenStack1](https://user-images.githubusercontent.com/22990797/124118337-115f4200-da26-11eb-9cb8-f94148ba9f22.PNG)
+
 Figure of System Architecture
+
 The proxy configuration file was edited. This included certain student accounts having admin privileges and the professor account having reseller admin privileges.
 Admin privileges – user can create, delete and modify objects in its container. 
 Reseller admin privileges – This gives admin privileges to non-admin users in swift. 
