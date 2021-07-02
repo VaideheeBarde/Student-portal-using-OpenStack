@@ -2,22 +2,26 @@
 
 Goal - Create student portal using OpenStack Swift.
 
-6 instances are instantiated both manually and using Python in the OpenStack UI.
+Project flow-
+1.)6 instances are instantiated both manually and using Python in the OpenStack UI.
 
-- Instances/Nodes - Admin Node(1 instance), Student Node(3 instances), Proxy Server (1 instance), Object Server (1 instance)
+- Instances/Nodes - Professor Node(1 instance), Student Node(3 instances), Proxy Server (1 instance), Object Server (1 instance)
 - Containers/Subjects - Student nodes can access objects in their own container only whereas the admin node can access the objects in all containers or subjects of students.
 - Objects/Files - A combination of REST API call-methods and curl commands are used to perform object actions such as file upload or file download.
+
+2.) Edit the proxy configuration file -
+Student account - Admin privileges (create, delete, modify objects in its container)
+Professor account - Reseller admin privileges (provides admin privileges to non-admin privileges in OpenStack Swift)
+
+3.) Process -
+- Professor node instantiates the containers and publishes these containers to the student nodes that are enrolled in the course. The professor node has been assigned reseller admin privileges, thus giving the professor node privileges to generate and assign containers to other student nodes. The student nodes have been assigned admin privileges, hence, on creation of a container in the student's account by the professor node, the student can access that container due to the assigned admin privileges.
+
 
 A diagram of how everything works.
 
 ![OpenStack1](https://user-images.githubusercontent.com/22990797/124118337-115f4200-da26-11eb-9cb8-f94148ba9f22.PNG)
 
-The proxy configuration file was edited. This included certain student accounts having admin privileges and the professor account having reseller admin privileges.
-Admin privileges – user can create, delete and modify objects in its container. 
-Reseller admin privileges – This gives admin privileges to non-admin users in swift. 
-Part 1 :
-The implementation of the architecture starts with a python script in which professor node having the reseller admin privileges creates containers and publishes these containers to all student nodes who are enrolled in the course.
-Students have admin privileges of their own account. They can see the containers created by the professor in his/her account.
+
 Part 2:
 Now, through the python script for student node, the student having file or assignment (object) can upload it to the object store node. That means the file is uploaded to the storage instance that we created. The student can also delete the file the file from the store node such that the file wouldn’t be retrieved by the professor node.
 After the assignment deadline, the professor can download all the files uploaded by the students. 
