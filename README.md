@@ -1,9 +1,8 @@
 # Student-portal-using-OpenStack
 
-Goal - Create student portal using OpenStack Swift.
+1.) Goal - Create student portal using OpenStack Swift.
 
-Project flow-
-1.)6 instances are instantiated both manually and using Python in the OpenStack UI.
+2.) Project flow- 6 instances are instantiated both manually and using Python in the OpenStack UI.
 
 - Instances/Nodes - Professor Node(1 instance), Student Node(3 instances), Proxy Server (1 instance), Object Server (1 instance)
 - Containers/Subjects - Student nodes can access objects in their own container only whereas the admin node can access the objects in all containers or subjects of students.
