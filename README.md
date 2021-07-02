@@ -25,7 +25,6 @@ A diagram of how everything works.
 
 Part 2:
 
-Also, a new technique has been added wherein the name of the file has been appended by the name of the account user. This avoids ambiguity if two students upload the file using the same file name.
 Deleting the files is also possible. Authentication of http requests is done by a feature in Swift using ‘TempAuth’. This generates a key for every session.
 Professor code:
 Initially, we have an array which contains the list of accounts
