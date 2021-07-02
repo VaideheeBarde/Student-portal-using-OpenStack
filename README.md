@@ -15,6 +15,7 @@ Professor account - Reseller admin privileges (provides admin privileges to non-
 
 3.) Process -
 - Professor node instantiates the containers and publishes these containers to the student nodes that are enrolled in the course. The professor node has been assigned reseller admin privileges, thus giving the professor node privileges to generate and assign containers to other student nodes. The student nodes have been assigned admin privileges, hence, on creation of a container in the student's account by the professor node, the student can access that container due to the assigned admin privileges.
+- Student and professor nodes upload/delete/view objects from containers using REST API methods as described in point 1. To avoid ambiguity in file names, append file name with account_user_names. 
 
 
 A diagram of how everything works.
@@ -23,9 +24,7 @@ A diagram of how everything works.
 
 
 Part 2:
-Now, through the python script for student node, the student having file or assignment (object) can upload it to the object store node. That means the file is uploaded to the storage instance that we created. The student can also delete the file the file from the store node such that the file wouldn’t be retrieved by the professor node.
-After the assignment deadline, the professor can download all the files uploaded by the students. 
-All the uploads and downloads happen using basic APIs like GET and PUT. The professor can view/list all the files uploaded by all the students and can download all of them.
+
 Also, a new technique has been added wherein the name of the file has been appended by the name of the account user. This avoids ambiguity if two students upload the file using the same file name.
 Deleting the files is also possible. Authentication of http requests is done by a feature in Swift using ‘TempAuth’. This generates a key for every session.
 Professor code:
