@@ -2,9 +2,9 @@
 
 Goal - Create student portal using OpenStack Swift.
 
-6 instances are instantiated both manually and using Python in the OpenStack UI. 3 instances represent students, 1 instance represents admin i.e the professor, 1 instance is the proxy server and the remaining instance is the object server where the assignment files (objects) are stored. All the files are uploaded and downloaded through the proxy server. A combination of REST APIs call-methods and curl commands are used to perform file actions such as upload or download.
+6 instances are instantiated both manually and using Python in the OpenStack UI. 3 instances represent students, 1 instance represents admin i.e the professor, 1 instance is the proxy server and the remaining instance is the object server where the assignment files (objects) are stored. All the files are uploaded and downloaded through the proxy server. A combination of REST API call-methods and curl commands are used to perform file actions such as upload or download.
 
-Admin node privileges - The admin node can access the files in all the containers of the students. 
+Admin node privileges - The admin node can access the files in all the containers (subjects) of the students. 
 Student node privileges - The three student nodes can access files in their own container only. They cannot access files from the containers of other students.
 In this project, containers are subjects and files that are uploaded/downloaded/deleted are the objects within each container. Thus, it makes it easier to divide the container as per the subject and the objects within each container as files.
 A diagram of how everything works.
