@@ -1,6 +1,7 @@
 # Student-portal-using-OpenStack
 
 1.) Goal - Create student portal using OpenStack Swift.
+    Technologies Used - OpenStack based SWIFT API, Django, Curl Commands
 
 2.) Project flow- 6 instances are instantiated both manually and using Python in the OpenStack UI.
 
